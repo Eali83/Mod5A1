@@ -1,0 +1,119 @@
+<html>
+
+<head>
+
+<title>Hello World</title>
+
+</head>
+
+<body>
+
+<!-- Point 1 & 2-->
+  <center><h1>SkyNetx</h1>
+<img src="Pictres/700.jpg" alt="700" height="400" width="800">
+</center>
+<br>
+
+<!-- Point 4-->
+
+<center><h4 id="dateTime"></h4></center>
+
+<!-- Point 5-->
+
+<h3>Hello, "Emad"</h3>
+
+<!-- Point A-->
+
+<button onclick="randomNumer()">Generate Random Number</button>
+
+<!-- Point B-->
+
+<button onclick="wholeNumber()">Round Number To Whole</button>
+
+<!-- Point C-->
+
+<button onclick="extractHours()">Extract Hours</button>
+
+<!-- Point D-->
+
+<button onclick="currentMonth()">Current Month</button>
+
+<h4 id="wholeNo"></h4>
+
+<h4 id="hourExtract"></h4>
+
+<h4 id="currentMonth"></h4>
+
+<script>
+
+// -- Point 4--
+
+var dateTime = new Date();
+
+document.getElementById("dateTime").innerHTML = dateTime;
+
+// -- POINT A --
+
+// Random Number will be stored in randomNo
+
+var randomNo;
+
+function randomNumer(){
+
+var precisionDecimal = 100; // 2 decimals
+
+// Generating Random Number Between 1 - 100 with 2 decimal places
+
+randomNo = Math.floor(Math.random() * (100 * precisionDecimal - 1 * precisionDecimal) + 1 * precisionDecimal) / (1*precisionDecimal);
+
+}
+
+// -- POINT B --
+
+// Rounding the Number
+
+function wholeNumber(){
+
+var wholeNo = Math.round(randomNo);
+
+document.getElementById("wholeNo").innerHTML = "I have successfully rounded the value "+randomNo+" to this value "+wholeNo;
+
+}
+
+// -- POINT C --
+
+// Extracting Hours
+
+function extractHours(){
+
+// Extracting Hour From DateTime
+
+var hourExtract = dateTime.getHours();
+
+document.getElementById("hourExtract").innerHTML = "The Current Hour is: "+hourExtract;
+
+}
+
+// -- POINT D --
+
+// Displaying Current Month
+
+function currentMonth(){
+
+// Fetching Current Month
+
+var currentMonth = dateTime.getMonth();
+
+// As Month index starts from 0 - January, 1 - February, 2- March. Hence adding 1 to the currentMonth
+
+currentMonth = currentMonth+1;
+
+document.getElementById("currentMonth").innerHTML = "This Month is: "+currentMonth;
+
+}
+
+</script>
+
+</body>
+
+</html>
